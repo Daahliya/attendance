@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Mark Attendance</h2>
+    <form method="POST" action="{{ url_for('mark_attendance') }}">
+        <button type="submit">Mark Attendance</button>
+    </form>
+    <h2>Attendance Records</h2>
+    <ul>
+        {% for attendance in attendances %}
+            <li>{{ attendance.date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
